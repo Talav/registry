@@ -18,7 +18,7 @@ final class PrioritizedServiceRegistry implements PrioritizedServiceRegistryInte
     private string $interface;
 
     /**
-     * Human readable context for these services, e.g. "tax calculation"
+     * Human readable context for these services, e.g. "tax calculation".
      */
     private string $context;
 
@@ -74,10 +74,6 @@ final class PrioritizedServiceRegistry implements PrioritizedServiceRegistryInte
      */
     private function assertServiceHaveType($service): void
     {
-        Assert::isInstanceOf(
-            $service,
-            $this->interface,
-            $this->context . ' needs to implement "%2$s", "%s" given.'
-        );
+        Assert::isInstanceOf($service, $this->interface, $this->context.' needs to implement "%2$s", "%s" given.');
     }
 }
